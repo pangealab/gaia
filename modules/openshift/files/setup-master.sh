@@ -75,5 +75,5 @@ systemctl restart docker
 # install scripts on the server.
 echo Defaults:ec2-user \!requiretty >> /etc/sudoers
 
-# Disable Firewall since it prevents the Nodes from calling Master to report status
+# Disable Firewall, prevents Nodes updating Master with status and show NotReady
 systemctl disable firewalld

@@ -12,11 +12,21 @@ provider "template" {
   version = "~> 2.1"
 }
 
+# Save Terraform State to S3 Bucket
+terraform {
+  backend "s3" {
+    bucket = "ectoplasm-terraform"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 //  Create the OpenShift cluster using our module.
 module "openshift" {
   source          = "./modules/openshift"
   region          = "${var.region}"
-  amisize         = "t2.large"    //  Smallest that meets the min specs for OS
+  # amisize       = "t2.large"    //  Smallest that meets the min specs for OS
+  amisize         = "r5a.xlarge"
   vpc_cidr        = "10.0.0.0/16"
   subnet_cidr     = "10.0.1.0/24"
   key_name        = "openshift"

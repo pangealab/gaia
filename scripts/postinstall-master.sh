@@ -5,8 +5,8 @@
 sudo su
 
 # Create an htpasswd file, we'll use htpasswd auth for OpenShift.
-htpasswd -cb /etc/origin/master/htpasswd admin 123
-echo "Password for 'admin' set to '123'"
+htpasswd -cb /etc/origin/master/htpasswd admin changeit
+echo "Password for 'admin' set to 'changeit'"
 
 # Update the docker config to allow OpenShift's local insecure registry. Also
 # use json-file for logging, so our Splunk forwarder can eat the container logs.

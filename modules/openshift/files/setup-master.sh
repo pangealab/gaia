@@ -74,3 +74,6 @@ systemctl restart docker
 # Allow the ec2-user to sudo without a tty, which is required when we run post
 # install scripts on the server.
 echo Defaults:ec2-user \!requiretty >> /etc/sudoers
+
+# Disable Firewall since it prevents the Nodes from calling Master to report status
+systemctl disable firewalld

@@ -45,7 +45,7 @@ chkconfig awslogs on
 # See: https://docs.openshift.org/latest/install_config/install/host_preparation.html
 
 # Install packages required to setup OpenShift.
-yum install -y wget git net-tools bind-utils iptables-services bridge-utils bash-completion httpd-tools python-passlib
+yum install -y wget git net-tools bind-utils iptables-services bridge-utils bash-completion httpd-tools
 yum update -y
 
 # Note: The step below is not in the official docs, I needed it to install

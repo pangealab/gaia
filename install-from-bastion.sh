@@ -4,11 +4,14 @@ set -x
 sudo -E su
 
 # Install dev tools.
-yum install -y "@Development Tools" python2-pip openssl-devel python-devel gcc libffi-devel
+yum install -y "@Development Tools" python2-pip openssl-devel python-devel gcc libffi-devel httpd-tools
 
 # Get the OKD 3.11 installer.
 pip install -I ansible==2.6.5
 git clone -b release-3.11 https://github.com/openshift/openshift-ansible
+
+# Install dev tools
+pip install passlib
 
 # # Get the OpenShift 3.10 installer.
 # pip install -I ansible==2.6.5

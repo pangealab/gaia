@@ -129,7 +129,7 @@ make browse-openshift
 open $(terraform output master-url)
 ```
 
-The url will be something like `https://a.b.c.d.xip.io:8443`.
+The url will be something like `https://openshift.hopto.org:8443`.
 
 ### The Master Node
 
@@ -177,10 +177,10 @@ Now check the address of the Docker Registry. Your Docker Registry url is just y
 
 ```
 % echo $(terraform output master-url)
-https://54.85.76.73.xip.io:8443
+https://openshift.hopto.org:8443
 ```
 
-In the example above, my registry url is `https://docker-registry-default.54.85.76.73.xip.io`. You can also get this url by running `oc get routes -n default` on the master node.
+In the example above, my registry url is `https://docker-registry-default.openshift.hopto.org`. You can also get this url by running `oc get routes -n default` on the master node.
 
 You will need to add this registry to the list of untrusted registries. The documentation for how to do this here https://docs.docker.com/registry/insecure/. On a Mac, the easiest way to do this is open the Docker Preferences, go to 'Daemon' and add the address to the list of insecure regsitries:
 
@@ -189,11 +189,11 @@ You will need to add this registry to the list of untrusted registries. The docu
 Finally you can log in. Your Docker Registry username is your OpenShift username (`admin` by default) and your password is your short-lived OpenShift login token, which you can get with `oc whoami -t`:
 
 ```
-% docker login docker-registry-default.54.85.76.73.xip.io -u admin -p `oc whoami -t`
+% docker login docker-registry-default.openshift.hopto.org -u admin -p `oc whoami -t`
 Login Succeeded
 ```
 
-You are now logged into the registry. You can also use the registry web interface, which in the example above is at: https://registry-console-default.54.85.76.73.xip.io
+You are now logged into the registry. You can also use the registry web interface, which in the example above is at: https://registry-console-default.openshift.hopto.org
 
 ![Atomic Registry Screenshot](./docs/atomic-registry.png)
 

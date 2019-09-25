@@ -17,3 +17,7 @@ echo "Docker configuration updated..."
 # It seems that with OKD 3.10, systemctl restart docker will hang. So just reboot.
 echo "Restarting host..."
 shutdown -r now "restarting post docker configuration"
+
+# Disable Firewall, prevents Nodes updating Master with status and show NotReady
+systemctl stop firewalld
+systemctl disable firewalld

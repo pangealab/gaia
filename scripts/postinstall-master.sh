@@ -21,4 +21,3 @@ systemctl disable firewalld
 # It seems that with OKD 3.10, systemctl restart docker will hang. So just reboot.
 echo "Restarting host..."
 shutdown -r now "restarting post docker configuration"
-

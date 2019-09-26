@@ -1,6 +1,6 @@
 infrastructure:
 	# Get the modules, create the infrastructure using a FDQN
-	terraform init && terraform get && terraform apply -auto-approve -var public_hostname=$(FDQN)
+	terraform init && terraform get && terraform apply -auto-approve
 
 # Installs OpenShift on the cluster.
 openshift:

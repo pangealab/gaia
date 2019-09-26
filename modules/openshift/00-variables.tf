@@ -22,10 +22,6 @@ variable "public_key_path" {
   description = "The local public key path, e.g. ~/.ssh/id_rsa.pub"
 }
 
-variable "public_hostname" {
-  description = "The FDQN of the Master Node (e.g. openshift.hopto.org)"
-}
-
 variable "cluster_name" {
   description = "Name of the cluster, e.g: 'openshift-cluster'. Useful when running multiple clusters in the same AWS account."
 }

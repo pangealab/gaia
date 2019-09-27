@@ -105,7 +105,15 @@ resource "aws_security_group" "openshift-public-egress" {
     to_port     = 8443
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  }    
+  }
+
+  //  SSH
+  egress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }  
 
   //  Use our common tags and add a specific name.
   tags = "${merge(

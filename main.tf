@@ -15,9 +15,9 @@ provider "template" {
 # Save Terraform State to S3 Bucket
 terraform {
   backend "s3" {
-    bucket = "ectoplasm-terraform"
+    bucket = "gaia-terraform-backend"
     key    = "terraform.tfstate"
-    region = "us-east-1"
+    region = "us-east-2"
   }
 }
 

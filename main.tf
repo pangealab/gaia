@@ -27,8 +27,8 @@ module "openshift" {
   region          = "${var.region}"
   # amisize       = "t2.large"    //  Smallest that meets the min specs for OS
   amisize         = "r5a.xlarge"
-  vpc_cidr        = "10.0.0.0/16"
-  subnet_cidr     = "10.0.1.0/24"
+  vpc_cidr        = "11.0.0.0/16"
+  subnet_cidr     = "11.0.1.0/24"
   key_name        = "openshift"
   public_hostname = "${var.public_hostname}"
   public_key_path = "${var.public_key_path}"

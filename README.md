@@ -82,3 +82,17 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 	```
 	make openshift
 	```
+
+# Secure Installation
+
+* Change admin password
+
+	```
+	make ssh-master
+	sudo htpasswd /etc/origin/master/htpasswd admin
+	Password: << Secure Password >>
+	```
+
+* Ingress AWS Security Groups
+
+	* Set `OpenShift Public Ingress` Inbound rules to specific User IP Source address (e.g. `aangelo home`) for each protocol

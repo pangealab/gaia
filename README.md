@@ -25,6 +25,14 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 * Create AWS Keys (e.g. `AWS Access Key ID` & `AWS Secret Access Key`)
 * Update AWS CLI Profile & Config Files w/ the AWS Keys from above
 
+# Create AWS Bucket
+
+* Login to AWS
+* Create AWS Bucket (e.g. `gaia-terraform-backend` )
+
+
+gaia-terraform-backend
+
 # Create SSH Key
 
 * Create SSH Key
@@ -71,6 +79,8 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 * Create Wildcard DNS on `noip.com` (e.g. `*.openshift.sytes.net`) using the `master-public-ip` from above
 
 * Install OKD
+
+	> NOTE: Wait until all servers are initialized from the _Create Infrastructure_ step above before proceeding
 
 	```
 	make openshift

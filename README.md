@@ -85,7 +85,7 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 
 # Secure Installation
 
-* Change admin password
+* Change OKD admin password
 
 	```
 	make ssh-master
@@ -96,3 +96,5 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 * Ingress AWS Security Groups
 
 	* Set `OpenShift Public Ingress` Inbound rules to specific User IP Source address (e.g. `aangelo home`) for each protocol
+
+	* Set `OpenShift SSH Access` Inbound rules to specific User IP Source address (e.g. `aangelo home`)

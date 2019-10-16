@@ -6,7 +6,7 @@ This project shows you how to set up the **Origin Community Distribution of Kube
 
 # Overview
 
-Terraform is used to create infrastructure as shown:
+Terraform is used to create the following infrastructure:
 
 ![Network Diagram](./docs/network-diagram.png)
 

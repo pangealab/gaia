@@ -30,9 +30,6 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 * Login to AWS
 * Create AWS Bucket (e.g. `gaia-terraform-backend` )
 
-
-gaia-terraform-backend
-
 # Create SSH Key
 
 * Create SSH Key

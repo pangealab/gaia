@@ -98,3 +98,49 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 	* Set `OpenShift Public Ingress` Inbound rules to specific User IP Source address (e.g. `aangelo home`) for each protocol
 
 	* Set `OpenShift SSH Access` Inbound rules to specific User IP Source address (e.g. `aangelo home`)
+
+# Scheduler Installation
+
+```
+NOTE: Use the following Tags to schedule servers
+us-office-hours = 9 AM - 5 PM, M-F
+running         = 24/7 always on
+stopped         = Off all the time
+```	
+
+* Login to AWS
+
+* Launch CloudFormation as follows:
+
+	* Stack S3 Bucket: 
+		https://s3.amazonaws.com/solutions-reference/aws-instance-scheduler/latest/instance-scheduler.template
+	* Stack Name: `Scheduler`
+	* Region: `us-east-2`
+
+* Download and unzip the scheduler CLI package
+
+	```
+	curl https://s3.amazonaws.com/solutions-reference/aws-instance-scheduler/latest/scheduler-cli.zip -o ~/scheduler-cli.zip
+	unzip ~/scheduler-cli.zip
+	```
+* Install Python
+
+	```
+	sudo python3 setup.py install
+	```
+* Create Schedule
+	
+	```
+	scheduler-cli create-schedule --name us-office-hours --periods office-hours --timezone America/New_York --description "Office hours in US EST" --stack Scheduler --region us-east-2
+	```
+* Other Scheduler Commands
+
+	```
+	scheduler-cli describe-schedules --stack=Scheduler --region=us-east-2
+	scheduler-cli describe-periods --stack=Scheduler --region=us-east-2
+	scheduler-cli describe-schedule-usage --stack=Scheduler --name=us-office-hours --region=us-east-2
+	```
+
+* Tag servers usign the `Schedule` tag accordingly
+
+	![Scheduer Tags](./docs/scheduler-tags.png)

@@ -143,4 +143,4 @@ stopped         = Off all the time
 
 * Tag servers usign the `Schedule` tag accordingly
 
-	![Scheduer Tags](./docs/scheduler-tags.png)
+	![Scheduler Tags](./docs/scheduler-tags.png)	

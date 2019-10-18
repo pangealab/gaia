@@ -1,7 +1,3 @@
----
-title: Terraform with Amazon Provider OpenShift Project 
----
-
 ![Intro](./docs/okd_3.11_screenshot.png)
 
 This project shows you how to set up the **Origin Community Distribution of Kubernetest (OKD)** on AWS using Terraform. Project has been forked and modified from [Get up and running with OKD on AWS](http://www.dwmkerr.com/get-up-and-running-with-openshift-on-aws/). 

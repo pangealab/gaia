@@ -1,8 +1,12 @@
+---
+title: Terraform with Amazon Provider OpenShift Project 
+---
+
 ![Intro](./docs/okd_3.11_screenshot.png)
 
 This project shows you how to set up the **Origin Community Distribution of Kubernetest (OKD)** on AWS using Terraform. Project has been forked and modified from [Get up and running with OKD on AWS](http://www.dwmkerr.com/get-up-and-running-with-openshift-on-aws/). 
 
-# Overview
+## Overview
 
 Terraform is used to create the following infrastructure:
 
@@ -10,25 +14,25 @@ Terraform is used to create the following infrastructure:
 
 Once the infrastructure is set up, an inventory of the system is dynamically created, which is used to install the OKD platform on the hosts.
 
-# Prerequisites
+## Prerequisites
 
 * AWS Console
 * WSL, Python 3, AWS CLI
 * Terraform v0.12.9
 
-# Get AWS Access Keys
+## Get AWS Access Keys
 
 * Login to AWS
 * Create IAM Account (e.g. `advlab`)
 * Create AWS Keys (e.g. `AWS Access Key ID` & `AWS Secret Access Key`)
 * Update AWS CLI Profile & Config Files w/ the AWS Keys from above
 
-# Create AWS Bucket
+## Create AWS Bucket
 
 * Login to AWS
 * Create AWS Bucket (e.g. `gaia-terraform-backend` )
 
-# Create SSH Key
+## Create SSH Key
 
 * Create SSH Key
 
@@ -43,7 +47,7 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
     chmod 644 ~/.ssh/authorized_keys    
     ```
 
-# Clone Project	
+## Clone Project	
 
 * Clone Project
 
@@ -52,7 +56,7 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 	cd gaia
 	```
 
-# Install OKD
+## Install OKD
 
 * Create Infrastructure
 
@@ -81,7 +85,7 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 	make openshift
 	```
 
-# Secure Installation
+## Secure Installation
 
 * Change OKD admin password
 
@@ -97,7 +101,7 @@ Once the infrastructure is set up, an inventory of the system is dynamically cre
 
 	* Set `OpenShift SSH Access` Inbound rules to specific User IP Source address (e.g. `aangelo home`)
 
-# Scheduler Installation
+## Scheduler Installation
 
 ```
 NOTE: Use the following Tags to schedule servers
